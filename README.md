@@ -1,7 +1,7 @@
 This a github cheatsheet of owning the machines in King of the Hill game of TryHackMe.
 
 
-<H1>Machine name: FOOD</H1>
+# Machine name: FOOD
 NMAP scan with `-p-` revealed that there is a telnet running on port 46969. <br /> 
 
 So following are the steps to get root, ASAP. <br /> 
@@ -21,11 +21,11 @@ So following are the steps to get root, ASAP. <br />
     Press :q! Enter <br /> 
     `sudo su` <br /> 
     In prompt enter the password of food, i.e.  `givemecookies` <br /> 
-    YOU ARE ROOT. NOW DEFEND YOUR TITILE.
+   #### YOU ARE ROOT. NOW DEFEND YOUR TITILE.
     
 
 
-<H1>Machine name: SHREK</H1>
+#  Machine name: SHREK
 
     
 This is first and relatively easy machine, But beaware this things have too many entries to keep an eye on, Best Idea for defending this is by just killing the shells. Again I am not posting the methods that are 'technically' better, I am posting methods that will be easiest to do and will get you win.
@@ -44,9 +44,9 @@ This will give you a shell to shrek.<br />
 
 3. After scanning the machine with linPEAS.sh, We found tha there is a gdb vulnerabilty in the box, using GTFObins, We use the following commands to do Privilage escalation.<br />
 `gdb -nx -ex 'python import os; os.execl("/bin/sh", "sh", "-p")' -ex quit`<br />
-    YOU ARE ROOT. NOW DEFEND YOUR TITILE.<br />
+  #### YOU ARE ROOT. NOW DEFEND YOUR TITILE.<br />
     
-<H1> Machine name: SPACE JAM</H1>
+#  Machine name: SPACE JAM
 
 This machine is race to root kind of thing, There is a very low hanging fruit to get root, But it is a way use only entry, i.e. Whoever uses it first will try his best to destory this entry as it is too open. <br />
 
@@ -70,13 +70,43 @@ This machine is race to root kind of thing, There is a very low hanging fruit to
  
     `LFILE=/root/king.txt`<br />
     `echo "<YOUR USERNAME>" | cp /dev/stdin "$LFILE"`<br />
-YOU ARE KING. NOW DEFEND YOUR TITILE.<br />
+#### YOU ARE KING. NOW DEFEND YOUR TITILE.<br />
 Free Tip: (You know you can read anyfile with this vuln, use your imagination.)<br />
     `LFILE=file_to_read`<br />
     `cp "$LFILE" /dev/stdout`<br />
 
-<h1> Machine name: FORTUNE </h1>
+#  Machine name: FORTUNE
 
 Now this is new machine, Released very recently, 
+And made it hard for me to post direct commands, Why?
+Heres why, In this machine, there's a thing called autogen script, that regenrates everything at every reset. That means direct credentials doesn't work anymore. So you have to follow the instructions and do everything manually.
+Let's Hack:
 
-  
+
+1. Initial nmap scans revealed that theres a netcat port open at 3333. 
+    ![image](https://user-images.githubusercontent.com/54495695/81497074-b9252800-92d9-11ea-9e85-e727773fc41c.png)
+
+2. When we connect to it, It gives out a weird base64 hash, After fiddling around, I found that it is base data of a zip file, so we use this [Site](https://base64.guru/converter/decode/file).
+    Copy the base64 hash to this site, and it will generate a file named application.zip.
+    
+3. Now when we try to open the file, The file needs a password, Just crack this file using fcrackzip and wordlist rockyou.txt.
+    `fcrackzip -v -u -D -p ~/wordlists/rockyou.txt application.zip`
+   Once you have the password, unzip it.
+   `unzip application.zip`
+   You get a file named creds.txt, Inside it we have the login details of user named `fortuna`. Lets GO.
+4. Using the creds, 
+    `ssh fortuna@<BOX IP>`
+5. Now that we have the shell, We can work on Privilage escalation.
+    After linpeas and basic test, I found that:
+        5.1 We as fortuna are in sudoers list.
+        5.2 And we also have `pico` in the `sudo -l` list.
+        
+6. We can simply edit the `/etc/sudoers/` file to give us ALL permissions to run sudo.
+7. Using this command:
+    `sudo pico /etc/sudoers`
+   Replace `pico` in sudoers file with `ALL`.
+8. Now you can just do, `sudo su` and you are root.
+
+#### You are ROOT, now defend your title.
+   
+   
