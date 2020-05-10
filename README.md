@@ -1,5 +1,6 @@
 # This is a work in progress, Many more machine cheatsheets will be updated very soon.
 
+#### Again I am not posting the methods that are 'technically' better, I am posting methods that will be easiest to do and will get you win. Target is to win while being inside the rules. This is not an exam, there are no wrong answers. As the saying goes, If it works, don't touch it.
 This a github cheatsheet of owning the machines in King of the Hill game of TryHackMe.
 
 
