@@ -70,12 +70,13 @@ This machine is race to root kind of thing, There is a very low hanging fruit to
  
     `LFILE=/root/king.txt`<br />
     `echo "<YOUR USERNAME>" | cp /dev/stdin "$LFILE"`<br />
-YOU ARE ROOT. NOW DEFEND YOUR TITILE.<br />
+YOU ARE KING. NOW DEFEND YOUR TITILE.<br />
 Free Tip: (You know you can read anyfile with this vuln, use your imagination.)<br />
     `LFILE=file_to_read`<br />
     `cp "$LFILE" /dev/stdout`<br />
 
+<h1> Machine name: FORTUNE </h1>
 
-
+Now this is new machine, Released very recently, 
 
   
