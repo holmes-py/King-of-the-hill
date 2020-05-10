@@ -1,6 +1,6 @@
 # This is a work in progress, Many more machine cheatsheets will be updated very soon.
 ### Active Contributors : 
-[Mr.Holmes](https://github.com/holmes-py)
+[Mr.Holmes](https://github.com/holmes-py) <br />
 [Cryptonic007](https://github.com/mohitkhemchandani)
  
 #### I am not posting the methods that are 'technically' better, I am posting methods that will be easiest to do and will get you win. Target is to win while being inside the rules. This is not an exam, there are no wrong answers. As the saying goes, If it works, don't touch it.
