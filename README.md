@@ -1,9 +1,7 @@
 This a github cheatsheet of owning the machines in King of the Hill game of TryHackMe.
 
 
-```
-Machine name: FOOD
-```
+<H1>Machine name: FOOD</H1>
 NMAP scan with `-p-` revealed that there is a telnet running on port 46969. <br /> 
 
 So following are the steps to get root, ASAP. <br /> 
@@ -26,9 +24,9 @@ So following are the steps to get root, ASAP. <br />
     YOU ARE ROOT. NOW DEFEND YOUR TITILE.
     
 
-```
-Machine name: SHREK
-```
+
+<H1>Machine name: SHREK</H1>
+
     
 This is first and relatively easy machine, But beaware this things have too many entries to keep an eye on, Best Idea for defending this is by just killing the shells. Again I am not posting the methods that are 'technically' better, I am posting methods that will be easiest to do and will get you win.
 Target is to win while being inside the rules. This is not an exam, there are no wrong answers.
@@ -48,9 +46,7 @@ This will give you a shell to shrek.<br />
 `gdb -nx -ex 'python import os; os.execl("/bin/sh", "sh", "-p")' -ex quit`<br />
     YOU ARE ROOT. NOW DEFEND YOUR TITILE.<br />
     
- ```
- Machine name: SPACE JAM
- ```
+<H1> Machine name: SPACE JAM</H1>
 
 This machine is race to root kind of thing, There is a very low hanging fruit to get root, But it is a way use only entry, i.e. Whoever uses it first will try his best to destory this entry as it is too open. <br />
 
