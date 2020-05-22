@@ -102,7 +102,9 @@ Let's Hack:<br />
   ##### Shortcut Note:  MAKE SURE TO DO THE FOLLOWING EDITS: 
   $IP = IP of KoTH box  <br />
   $location = address of your rockyou wordlist <br />
-  `nc $IP 3333  | base64 -d  > test.zip; unzip -P  (fcrackzip -v -u -D -p $location/rockyou.txt test.zip | grep "pw" |awk '{print $5}') test.zip; cat creds.txt`
+  Copy the hash in a file, <br />
+  
+  `cat file.txt | base64 -d  > test.zip; unzip -P  (fcrackzip -v -u -D -p $location/rockyou.txt test.zip | grep "pw" |awk '{print $5}') test.zip; cat creds.txt`
   
    You get a file named creds.txt, Inside it we have the login details of user named `fortuna`. Lets GO.<br /> 
 4. Using the creds, <br /> 
