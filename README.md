@@ -36,7 +36,7 @@ So following are the steps to get root, ASAP. <br />
     
 This is first and relatively easy machine, But beaware this things have too many entries to keep an eye on, Best Idea for defending this is by just killing the shells. Again I am not posting the methods that are 'technically' better, I am posting methods that will be easiest to do and will get you win.
 Target is to win while being inside the rules. This is not an exam, there are no wrong answers.
-As the saying goes, *If it works, don't touch it.*
+As the saying goes, *If it works, don't touch it.* 
 
 1. Initial gobuster scan revealed that `robots.txt` file contains an abnormal entry, When we navigate to it, we find the entire RSA key.
 
