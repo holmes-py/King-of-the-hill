@@ -5,6 +5,14 @@ Sorry I am lazy AF, will update more machines soon!
 #### I am not posting the methods that are 'technically' better, I am posting methods that will be easiest to do and will get you win. Target is to win while being inside the rules. This is not an exam, there are no wrong answers. As the saying goes, If it works, don't touch it.
 This a github cheatsheet of owning the machines in King of the Hill game of TryHackMe.
 
+## Index of Machine Covered:
+1. [Food](#machine-name-food)
+2. [Shrek](#machine-name-shrek)
+3. [SpaceJam](#machine-name-space-jam)
+4. [Fortune](#machine-name-fortune)
+5. [Production](#machine-name-production)
+6. [Lion](#machine-name-lion)
+7. [Hackers](https://github.com/holmes-py/King-of-the-hill/blob/master/Writeup%20for%20Hackers%2001.md)
 
 # Machine name: FOOD
 NMAP scan with `-p-` revealed that there is a telnet running on port 46969. <br /> 
@@ -140,7 +148,7 @@ Let's Hack:<br />
 
 #### You are ROOT, now defend your title.<br /> 
 
-# Machine: Lion
+# Machine name: Lion
 
 1. After nmap scan we can see that weirdly there is no ssh on the machine. But nostromo is present at port 8080.<br />
   Later after doing complete scan we found that the port for ssh is shifted to port 1337.<br />
