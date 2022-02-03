@@ -137,7 +137,7 @@ Let's Hack:<br />
  1. Basic enumeration will get you the password/ssh id_rsa key of user Ashu.<br /> 
  2. Once you are in machine with user as Ashu.<br /> 
     Check the `sudo -l`, you will see that you can run `su` on for user skiddy without password.<br /> 
- 3. After, `sudo su skiddy` , You are in the skiddy shell.<br /> 
+ 3. After, `sudo /bin/su skidy` , You are in the skiddy shell.<br /> 
  4. We don't need to enumerate this machine anymore. The `sudo -l` can show that we can run `git` as sudo.<br /> 
  5. Using GTFObins, we see that the following commands can be used to give us root shell.<br /> 
     `sudo git -p help config`<br /> 
